@@ -158,7 +158,7 @@ async fn main() -> std::io::Result<()> {
             .app_data(actix_web::web::Data::new(client.clone())) // Share the client with each request
             .route("/get-tx/{file_name}", actix_web::web::get().to(get_tx_json))
     })
-        .bind(("127.0.0.1", 9099))?
+        .bind(("127.0.0.1", 80))?
         .run()
         .await
 }
